@@ -21,7 +21,7 @@ if voice_message is not None:
     def convert_ogg_to_wav(ogg_file_path):
         wav_output = ogg_file_path.replace('.ogg', '.wav')  # Change file extension to .wav
         try:
-            # Directly call 'ffmpeg' (no need for explicit binary path on Ubuntu)
+            # Call FFmpeg (ensure it's installed via packages.txt)
             subprocess.run(['ffmpeg', '-i', ogg_file_path, wav_output], check=True)
             return wav_output
         except subprocess.CalledProcessError as e:
